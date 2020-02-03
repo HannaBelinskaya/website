@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,12 +26,9 @@
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">Start Bootstrap </div>
       <div class="list-group list-group-flush">
-        <a href="{{asset('about')}}" class="list-group-item list-group-item-action bg-light"> О нас</a>
-        <a href="{{asset('contact')}}" class="list-group-item list-group-item-action bg-light">Контакты</a>
-        <a href="{{asset('reviews')}}" class="list-group-item list-group-item-action bg-light">Отзывы</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Events</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Profile</a>
-        <a href="#" class="list-group-item list-group-item-action bg-light">Status</a>
+	  @foreach($v_categories as $cat)
+        <a href="{{asset('category/'.$cat->id)}}" class="list-group-item list-group-item-action bg-light"> {{$cat->name}}</a>
+        @endforeach
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -105,6 +102,26 @@
                                 </div>
                             </li>
                         @endguest
+						<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <img id="imgNavSel" src="https://tattooscalculator.com/img/flag/Rus_40.jpg" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;
+                            <span id="lanNavSel">Rus</span> <span class="caret"></span></a>
+                        <ul class="dropdown-menu mumu" role="menu">
+                            <li><a id="navFra" href="https://tattooscalculator.com/?lang=Fra" class="language">
+                                    <img id="imgNavFra" src="https://tattooscalculator.com/img/flag/Fra_40.jpg" alt="France" class="img-thumbnail icon-small">&nbsp;
+                                    <span id="lanNavFra">Française</span>&nbsp;
+                                </a></li>
+                            <li><a id="navEng" href="https://tattooscalculator.com/?lang=Eng" class="language">
+                                    <img id="imgNavEng" src="https://tattooscalculator.com/img/flag/Eng_40.jpg" alt="English" class="img-thumbnail icon-small">&nbsp;
+                                    <span id="lanNavEng">English</span>&nbsp;
+                                </a></li>
+                            <li><a id="navRus" href="https://tattooscalculator.com/?lang=Rus" class="language">
+                                    <img id="imgNavRus" src="https://tattooscalculator.com/img/flag/Rus_40.jpg" alt="Russia" class="img-thumbnail icon-small">&nbsp;
+                                    <span id="lanNavRus">Русский</span>&nbsp;
+                                </a></li>
+                        </ul>
+                    </li>
+						
 						</ul>
   </div>
   <!-- /#wrapper -->
